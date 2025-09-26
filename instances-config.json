@@ -1,0 +1,67 @@
+{
+  "sourcePath": "C:\\Users\\jnr_1\\Documents\\Proyectos\\CIISA\\AI\\pyxoom-rabbit\\publish",
+  "outputBasePath": "./GeneratedInstances",
+  "baseAppSettingsPath": "C:\\Users\\jnr_1\\Documents\\Proyectos\\CIISA\\AI\\pyxoom-rabbit\\Pyxoom-Rabbit\\appsettings.json",
+  "copyAdditionalFiles": [
+    "Content"
+  ],
+  "excludeFiles": [
+    "appsettings.json",
+    "appsettings.Development.json"
+  ],
+  "instances": [
+    {
+      "instanceName": "Cliente 1 - Producción",
+      "folderName": "cliente1-prod",
+      "clientId": "1",
+      "logPath": "C:/PyxoomLogs/Cliente1",
+      "pyxoomInteractiveUrl": "https://cliente1.pyxoomdemo.com/Interactive42/Home/SignInToken",
+      "pyxoomInteractivePublicPrivacy": "https://cliente1.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
+      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente1;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "externalPyxoomServicesApiUrl": "https://api-cliente1.pyxoomdemo.com/",
+      "rabbitMQChannel": "pyxoom_cliente1",
+      "empresaId": 1,
+      "description": "Instancia de producción para Cliente 1",
+      "customSettings": {
+        "RabbitMQ:HostName": "b-f305232b-ed26-489d-9f64-8b0ec19693e3.mq.us-east-1.on.aws",
+        "ExternalServices:NodeAppUrl": "http://201.163.143.98:8001/"
+      }
+    },
+    {
+      "instanceName": "Cliente 2 - Desarrollo",
+      "folderName": "cliente2-dev",
+      "clientId": "2",
+      "logPath": "C:/PyxoomLogs/Cliente2",
+      "pyxoomInteractiveUrl": "https://dev-cliente2.pyxoomdemo.com/Interactive42/Home/SignInToken",
+      "pyxoomInteractivePublicPrivacy": "https://dev-cliente2.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
+      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente2_Dev;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "externalPyxoomServicesApiUrl": "https://dev-api-cliente2.pyxoomdemo.com/",
+      "rabbitMQChannel": "pyxoom_cliente2_dev",
+      "empresaId": 2,
+      "description": "Instancia de desarrollo para Cliente 2",
+      "customSettings": {
+        "RabbitMQ:HostName": "b-f305232b-ed26-489d-9f64-8b0ec19693e3.mq.us-east-1.on.aws",
+        "ExternalServices:NodeAppUrl": "http://201.163.143.98:8001/"
+      }
+    },
+    {
+      "instanceName": "Cliente 3 - Testing",
+      "folderName": "cliente3-test",
+      "clientId": "3",
+      "logPath": "C:/PyxoomLogs/Cliente3",
+      "pyxoomInteractiveUrl": "https://test-cliente3.pyxoomdemo.com/Interactive42/Home/SignInToken",
+      "pyxoomInteractivePublicPrivacy": "https://test-cliente3.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
+      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente3_Test;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "externalPyxoomServicesApiUrl": "https://test-api-cliente3.pyxoomdemo.com/",
+      "rabbitMQChannel": "pyxoom_cliente3_test",
+      "empresaId": 3,
+      "description": "Instancia de testing para Cliente 3",
+      "customSettings": {
+        "RabbitMQ:HostName": "b-f305232b-ed26-489d-9f64-8b0ec19693e3.mq.us-east-1.on.aws",
+        "ExternalServices:NodeAppUrl": "http://201.163.143.98:8001/",
+        "ExternalServices:QANodeAppUrl": "https://28134620fba2.ngrok-free.app/"
+      }
+    }
+  ]
+}
+
