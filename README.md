@@ -97,17 +97,10 @@ PyxoomInstanceGenerator/
 ### A) Ejecución con el EXE compilado (recomendado para soporte)
 
 1) Asegúrate de tener el archivo `instances-config.json` junto al EXE o indica la ruta como argumento.
-2) Ejecuta:
-
-```bat
-PyxoomInstanceGenerator.exe
-```
-
-o con un archivo de configuración específico:
-
-```bat
-PyxoomInstanceGenerator.exe C:\ruta\a\instances-config.json
-```
+2) Ejecuta el generador:
+   - **Doble clic** en `PyxoomInstanceGenerator.exe`
+   - O desde CMD: `PyxoomInstanceGenerator.exe`
+   - O con archivo específico: `PyxoomInstanceGenerator.exe C:\ruta\a\instances-config.json`
 
 El ejecutable creará las carpetas de instancias, generará `appsettings.json` y, al final, escribirá en `outputBasePath`:
 
@@ -288,7 +281,13 @@ Archivos generados por este generador (en `outputBasePath`):
 - `pm2-start-all.bat`: ejecuta stop/delete/start para todas las instancias
 - `pm2-start-all.ps1`: equivalente para PowerShell
 
-Ejecución típica (Windows CMD):
+Ejecución típica:
+
+**Opción 1: PowerShell (recomendado)**
+- Navega a la carpeta `GeneratedInstances` (o el nombre configurado en `outputBasePath`)
+- **Clic derecho** en `pm2-start-all.ps1` → **"Ejecutar con PowerShell"**
+
+**Opción 2: CMD**
 ```bat
 pm2-start-all.bat
 ```
@@ -326,7 +325,7 @@ Así evitas impactar otros servicios PM2 que no fueron generados aquí.
 ### Actualizar un ambiente existente
 
 1) Vuelve a ejecutar `PyxoomInstanceGenerator.exe` (con el `instances-config.json` actualizado). 
-2) Ejecuta `pm2-start-all.bat` para recrear los procesos. El BAT ya hace stop/delete antes de start, por lo que actualiza sin duplicados.
+2) Ejecuta `pm2-start-all.ps1` (clic derecho → "Ejecutar con PowerShell") para recrear los procesos. El script ya hace stop/delete antes de start, por lo que actualiza sin duplicados.
 
 ### Notas
 - Las rutas usadas en los comandos PM2 son absolutas y normalizadas, lo cual evita problemas de separadores en Windows.

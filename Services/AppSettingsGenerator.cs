@@ -90,9 +90,12 @@ namespace PyxoomInstanceGenerator.Services
                                 var originalPath = config["Args"]["path"]?.ToString();
                                 if (!string.IsNullOrEmpty(originalPath))
                                 {
-                                    // Reemplazar la ruta base con la ruta específica de la instancia
-                                    var newPath = originalPath.Replace("C:/PyxoomLogs/", $"{instance.LogPath}/");
-                                    newPath = newPath.Replace("C:/Remisiones/", $"{instance.LogPath}/");
+                                    // Extraer solo el nombre del archivo de log
+                                    var fileName = Path.GetFileName(originalPath);
+                                    
+                                    // Crear nueva ruta usando el logPath de la instancia
+                                    var newPath = Path.Combine(instance.LogPath, fileName).Replace('\\', '/');
+                                    
                                     config["Args"]["path"] = newPath;
                                 }
                             }

@@ -105,6 +105,15 @@ namespace PyxoomInstanceGenerator.Services
             batLines.Add("@echo off");
             batLines.Add("echo Iniciando procesos con pm2...");
             batLines.Add("");
+            batLines.Add("REM Verificar que PM2 esté instalado");
+            batLines.Add("pm2 --version >nul 2>&1");
+            batLines.Add("if errorlevel 1 (");
+            batLines.Add("    echo ERROR: PM2 no está instalado o no está en el PATH");
+            batLines.Add("    echo Instala PM2 con: npm install -g pm2");
+            batLines.Add("    pause");
+            batLines.Add("    exit /b 1");
+            batLines.Add(")");
+            batLines.Add("");
 
             ps1Lines.Add("# Inicia procesos con pm2 para cada instancia");
             ps1Lines.Add("Write-Host \"Iniciando procesos con pm2...\" -ForegroundColor Green");
@@ -131,10 +140,17 @@ namespace PyxoomInstanceGenerator.Services
                 txtLines.Add(deleteCmd);
                 txtLines.Add(startCmd);
 
-                // BAT: suprime salida de stop/delete para no ensuciar
+                // BAT: suprime salida de stop/delete para no ensuciar, pero muestra errores de start
+                batLines.Add($"echo Procesando instancia: {instance.InstanceName}");
                 batLines.Add($"{stopCmd} 1>nul 2>nul");
                 batLines.Add($"{deleteCmd} 1>nul 2>nul");
-                batLines.Add(startCmd);
+                batLines.Add($"if not exist \"{exePathNormalized}\" (");
+                batLines.Add($"    echo ERROR: No se encontró el ejecutable: {exePathNormalized}");
+                batLines.Add($"    echo Verifica que la ruta sea correcta");
+                batLines.Add($") else (");
+                batLines.Add($"    {startCmd}");
+                batLines.Add($")");
+                batLines.Add("");
 
                 // PS1: envía a Out-Null stop/delete
                 ps1Lines.Add($"{stopCmd} | Out-Null");
@@ -143,7 +159,10 @@ namespace PyxoomInstanceGenerator.Services
             }
 
             batLines.Add("");
-            batLines.Add("echo Hecho.");
+            batLines.Add("echo.");
+            batLines.Add("echo Proceso completado. Verifica el estado con: pm2 list");
+            batLines.Add("echo.");
+            batLines.Add("pause");
 
             ps1Lines.Add("");
             ps1Lines.Add("Write-Host \"Hecho.\" -ForegroundColor Cyan");
