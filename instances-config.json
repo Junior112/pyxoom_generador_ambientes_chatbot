@@ -17,7 +17,7 @@
       "logPath": "C:/PyxoomLogs/Cliente1",
       "pyxoomInteractiveUrl": "https://cliente1.pyxoomdemo.com/Interactive42/Home/SignInToken",
       "pyxoomInteractivePublicPrivacy": "https://cliente1.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
-      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente1;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "pyxoomConnectionString": "Data Source=",
       "externalPyxoomServicesApiUrl": "https://api-cliente1.pyxoomdemo.com/",
       "rabbitMQChannel": "pyxoom_cliente1",
       "empresaId": 1,
@@ -34,7 +34,7 @@
       "logPath": "C:/PyxoomLogs/Cliente2",
       "pyxoomInteractiveUrl": "https://dev-cliente2.pyxoomdemo.com/Interactive42/Home/SignInToken",
       "pyxoomInteractivePublicPrivacy": "https://dev-cliente2.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
-      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente2_Dev;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "pyxoomConnectionString": "Data Source=",
       "externalPyxoomServicesApiUrl": "https://dev-api-cliente2.pyxoomdemo.com/",
       "rabbitMQChannel": "pyxoom_cliente2_dev",
       "empresaId": 2,
@@ -51,7 +51,7 @@
       "logPath": "C:/PyxoomLogs/Cliente3",
       "pyxoomInteractiveUrl": "https://test-cliente3.pyxoomdemo.com/Interactive42/Home/SignInToken",
       "pyxoomInteractivePublicPrivacy": "https://test-cliente3.pyxoomdemo.com/Interactive42/PublicPrivacy/Index",
-      "pyxoomConnectionString": "Data Source=54.234.241.70,1433\\SQLEXPRESS;Database=Pyxoom42_Cliente3_Test;User ID=pyxoomuser;Password=xjWD47PB4lwSp5H11vwq;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;",
+      "pyxoomConnectionString": "Data Source=",
       "externalPyxoomServicesApiUrl": "https://test-api-cliente3.pyxoomdemo.com/",
       "rabbitMQChannel": "pyxoom_cliente3_test",
       "empresaId": 3,
@@ -64,6 +64,7 @@
     }
   ]
 }
+
 
 
 
